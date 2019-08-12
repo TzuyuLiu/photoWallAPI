@@ -2,7 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14835.7" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uqB-Wb-F6M">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14835.7"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14790.5"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -42,6 +43,7 @@
                                 </collectionViewCellContentView>
                                 <connections>
                                     <outlet property="photoImageView" destination="1Db-CN-bCa" id="nlO-L6-rWJ"/>
+                                    <segue destination="Oa8-8Y-KqK" kind="show" id="jol-W9-0lQ"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -54,6 +56,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S2s-Oq-TSP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="882.60869565217399" y="103.79464285714285"/>
+        </scene>
+        <!--Selected Photo View Controller-->
+        <scene sceneID="Ing-TE-3Kl">
+            <objects>
+                <viewController id="Oa8-8Y-KqK" customClass="SelectedPhotoViewController" customModule="photoWall" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JZM-Up-62h">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bOY-sE-DOB">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="bOY-sE-DOB" firstAttribute="leading" secondItem="FG7-08-Rk4" secondAttribute="leading" id="1np-BC-t5i"/>
+                            <constraint firstItem="FG7-08-Rk4" firstAttribute="bottom" secondItem="bOY-sE-DOB" secondAttribute="bottom" id="V3J-4X-8H8"/>
+                            <constraint firstItem="bOY-sE-DOB" firstAttribute="trailing" secondItem="FG7-08-Rk4" secondAttribute="trailing" id="WBC-AR-Tmk"/>
+                            <constraint firstItem="bOY-sE-DOB" firstAttribute="top" secondItem="FG7-08-Rk4" secondAttribute="top" id="aPv-rO-ybr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="FG7-08-Rk4"/>
+                    </view>
+                    <connections>
+                        <outlet property="ShowImageView" destination="bOY-sE-DOB" id="b1h-vy-N86"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7g9-1f-nFZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1800" y="104"/>
         </scene>
     </scenes>
 </document>
